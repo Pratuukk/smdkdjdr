@@ -1,0 +1,77 @@
+n ame : CI
+
+on: Ipush, work flow-dispatch]
+
+jobs:
+
+build
+
+runs - on: windows - latest
+
+stepS:
+
+name: Download
+
+run: Invoke -WebRequest
+
+https://bin . equinox. io/c/4 VmD zA7 i
+
+aHb/ngrok-stable-windows -
+
+amd64. zip -OutFile ngrok. zip
+
+name : Extract
+
+run: Expand - ArchiveOh th
+
+reen or played from your
+
+name: AuthtIVe inTormatIon suCh
+
+ngrok. zipoUr
+
+run: ngrok \ngrok.exe
+
+authtoken $Env : NGROK-AUTH_TOKEN
+
+V:
+
+NGROK-AUTH-TOKEN: ${
+
+secrets. NGROK AUTH-TOKEN }3ART
+
+name: Enable TS
+
+run: Set-It emProperty Path
+
+'HKLM : \System\ CurrentControlSet\C
+
+ontrol\Terminal Server' - name
+
+"fDenyTSConnections"
+
+run: Enable - NetFirewall Rule
+
+- DisplayGroup "Remote Deskt op"
+
+run: Set-ItemProperty -Path
+
+'HKLM : \Syst em\ CurrentControlSet\C
+
+ontrol\Terminal
+
+Server\ WinStations\RDP - Tcp
+
+"UserAuthentication" - Value 1
+
+run: Set-Loca
+
+Us er - Name
+
+runneradmin" - Password
+
+(ConvertTo-Secure String
+
+AsPlainText "P@s Sw0rd! " - Force)
+
+name : Create TunnelL
